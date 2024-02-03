@@ -1,0 +1,285 @@
+INFO - 2023-11-14 21:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:12:01 --> CSRF token verified.
+INFO - 2023-11-14 21:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:12:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:12:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:13:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 21:13:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:09:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:10:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:10:04 --> CSRF token verified.
+ERROR - 2023-11-14 22:10:04 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /Applications/MAMP/htdocs/prestamos/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /Applications/MAMP/htdocs/prestamos/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/prestamos/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/prestamos/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/prestamos/app/Controllers/PrestamosController.php(128): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+#9 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+#10 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/prestamos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-14 22:10:04 --> Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'9.6\', \'6\', \'2023-11-14 22:10:04\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:10:04\', \'2023-11-14 22:10:04\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'9.6\', \'6\', \'2023-11-14 22:10:04\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:10:04\', \'2023-11-14 22:10:04\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'9.6\', \'6\', \'2023-11-14 22:10:04\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:10:04\', \'2023-11-14 22:10:04\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (:importe:, :modalidad:, :tasa_interes:, :cuotas:, :fecha:, :fecha_venc:, :id_cliente:, :id_usuario:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/PrestamosController.php(128): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-14 22:15:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:15:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:15:58 --> CSRF token verified.
+ERROR - 2023-11-14 22:15:58 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /Applications/MAMP/htdocs/prestamos/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /Applications/MAMP/htdocs/prestamos/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/prestamos/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/prestamos/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/prestamos/app/Controllers/PrestamosController.php(128): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+#9 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+#10 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/prestamos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-14 22:15:58 --> Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'9.6\', \'6\', \'2023-11-14 22:15:58\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:15:58\', \'2023-11-14 22:15:58\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'9.6\', \'6\', \'2023-11-14 22:15:58\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:15:58\', \'2023-11-14 22:15:58\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'9.6\', \'6\', \'2023-11-14 22:15:58\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:15:58\', \'2023-11-14 22:15:58\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (:importe:, :modalidad:, :tasa_interes:, :cuotas:, :fecha:, :fecha_venc:, :id_cliente:, :id_usuario:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/PrestamosController.php(128): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-14 22:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:17:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:40 --> CSRF token verified.
+INFO - 2023-11-14 22:18:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:57 --> CSRF token verified.
+INFO - 2023-11-14 22:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:18:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:32 --> CSRF token verified.
+INFO - 2023-11-14 22:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:51 --> CSRF token verified.
+INFO - 2023-11-14 22:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:19:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:23:40 --> CSRF token verified.
+ERROR - 2023-11-14 22:23:40 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /Applications/MAMP/htdocs/prestamos/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /Applications/MAMP/htdocs/prestamos/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/prestamos/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/prestamos/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/prestamos/app/Controllers/PrestamosController.php(128): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+#9 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+#10 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/prestamos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-14 22:23:40 --> Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'1.6\', \'1\', \'2023-11-14 22:23:40\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:23:40\', \'2023-11-14 22:23:40\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'1.6\', \'1\', \'2023-11-14 22:23:40\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:23:40\', \'2023-11-14 22:23:40\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'275000\', \'MENSUAL\', \'1.6\', \'1\', \'2023-11-14 22:23:40\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:23:40\', \'2023-11-14 22:23:40\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (:importe:, :modalidad:, :tasa_interes:, :cuotas:, :fecha:, :fecha_venc:, :id_cliente:, :id_usuario:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/PrestamosController.php(128): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-14 22:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:24:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:24:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:24:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:24:28 --> CSRF token verified.
+ERROR - 2023-11-14 22:24:28 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE) in /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /Applications/MAMP/htdocs/prestamos/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `pr...', 0)
+#1 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 /Applications/MAMP/htdocs/prestamos/system/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 /Applications/MAMP/htdocs/prestamos/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 /Applications/MAMP/htdocs/prestamos/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /Applications/MAMP/htdocs/prestamos/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /Applications/MAMP/htdocs/prestamos/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 /Applications/MAMP/htdocs/prestamos/app/Controllers/PrestamosController.php(114): CodeIgniter\Model->insert(Array)
+#8 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+#9 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+#10 /Applications/MAMP/htdocs/prestamos/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Applications/MAMP/htdocs/prestamos/public/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-11-14 22:24:28 --> Cannot add or update a child row: a foreign key constraint fails (`prestamos`.`prestamos`, CONSTRAINT `fk_clientes` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`) ON DELETE CASCADE ON UPDATE CASCADE)
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'0\', \'MENSUAL\', \'1.6\', \'1\', \'2023-11-14 22:24:28\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:24:28\', \'2023-11-14 22:24:28\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'0\', \'MENSUAL\', \'1.6\', \'1\', \'2023-11-14 22:24:28\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:24:28\', \'2023-11-14 22:24:28\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (\'0\', \'MENSUAL\', \'1.6\', \'1\', \'2023-11-14 22:24:28\', \'2023-12-14\', \'9\', \'1\', \'2023-11-14 22:24:28\', \'2023-11-14 22:24:28\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `prestamos` (`importe`, `modalidad`, `tasa_interes`, `cuotas`, `fecha`, `fecha_venc`, `id_cliente`, `id_usuario`, `created_at`, `updated_at`) VALUES (:importe:, :modalidad:, :tasa_interes:, :cuotas:, :fecha:, :fecha_venc:, :id_cliente:, :id_usuario:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/PrestamosController.php(114): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\PrestamosController->create()
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrestamosController))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-11-14 22:25:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:25:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:25:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:32:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:32:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:32:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:32:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:33:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:35:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:35:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:35:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:36:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:37:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:37:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:26 --> CSRF token verified.
+INFO - 2023-11-14 22:38:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:38:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:39:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:39:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:40:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:42:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:42:27 --> CSRF token verified.
+INFO - 2023-11-14 22:42:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:42:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:42:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:42:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:43:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:05 --> CSRF token verified.
+INFO - 2023-11-14 22:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:50 --> CSRF token verified.
+INFO - 2023-11-14 22:46:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:47:24 --> CSRF token verified.
+INFO - 2023-11-14 22:47:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:47:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:47:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:48:04 --> CSRF token verified.
+INFO - 2023-11-14 22:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 22:48:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:26 --> CSRF token verified.
+INFO - 2023-11-14 23:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-14 23:05:00 --> CSRF token verified.
+INFO - 2023-11-14 23:05:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

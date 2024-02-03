@@ -1,0 +1,18 @@
+/* Typography */
+body {
+  font-family: 'Roboto', sans-serif !important; 
+}
+/* Base */
+.dt-buttons button {
+  background-color: white !important;
+  box-shadow: initial;
+  margin: 0;
+  padding: 0; }
+
+/* Icons Dash Board */
+.icon-dashboard img {
+  max-width: 128px !important;
+  max-height: 128px !important; }
+
+/* Layout */
+/* Components */
